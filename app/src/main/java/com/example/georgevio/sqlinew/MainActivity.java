@@ -47,11 +47,11 @@ public class MainActivity extends AppCompatActivity {
 
 
                 if (mydb.insertContact(getName, getPhone, getEmail, getPlace, getGender)) {
-                    Log.v("georgeLog", "Successfully inserted record to db");
+                    Log.v("georgeLog", "A Record Has Been Inserted To DateBase Successfully");
                     Toast.makeText(getApplicationContext(),
                             "Inserted:" + getName + ", " + getPhone + "," + getEmail+ "," + getPlace+ "," + getGender, Toast.LENGTH_SHORT).show();
                 } else
-                    Toast.makeText(getApplicationContext(), "DID NOT insert to db :-(", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "No Data Has Been Inserted To DataBase!", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -68,11 +68,11 @@ public class MainActivity extends AppCompatActivity {
                     String dPlace = getData.getString(getData.getColumnIndex("place"));
                     String dGender = getData.getString(getData.getColumnIndex("gender"));
                     Toast.makeText(getApplicationContext(),
-                            "rec: " + dName + ", " + dPhone + ", " + dEmail + ", " + dPlace + ", " + dGender, Toast.LENGTH_LONG).show();
+                            "Record" + dName + ", " + dPhone + ", " + dEmail + ", " + dPlace + ", " + dGender, Toast.LENGTH_LONG).show();
                 }
                 else
                     Toast.makeText(getApplicationContext(),
-                            "did not get any data...:-(", Toast.LENGTH_LONG).show();
+                            "Did Not Receive Data ", Toast.LENGTH_LONG).show();
                 getData.close();
             }
         });
