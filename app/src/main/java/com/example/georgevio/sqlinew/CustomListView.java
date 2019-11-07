@@ -39,11 +39,12 @@ public class CustomListView {
 
         if (convertView == null) {
 
-            convertView = layoutInflater.inflate(R.layout.listview_row, null);
+            convertView = layoutInflater.inflate(R.layout.adapter_list, null);
             holder = new ViewHolder();
 
-            holder.FirstText = (TextView) convertView.findViewById(R.id.FirstText);
-            holder.SecondText = (TextView) convertView.findViewById(R.id.SecondText);
+            holder.FirstText = (TextView) convertView.findViewById(R.id.editName);
+            holder.SecondText = (TextView) convertView.findViewById(R.id.editPhone);
+
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();

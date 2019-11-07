@@ -45,7 +45,7 @@
 
     <EditText
         android:id="@+id/editName"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="148dp"
         android:layout_marginTop="44dp"
@@ -62,30 +62,56 @@
 
     <EditText
         android:id="@+id/editPhone"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="180dp"
         android:layout_marginTop="104dp"
         android:layout_marginEnd="4dp"
         android:layout_marginRight="4dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
-        app:layout_constraintBottom_toTopOf="@+id/editEmail"
+        android:hint="Phone Number: 05********"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/txtEmail"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.333" />
 
     <EditText
-        android:id="@+id/editEmail"
-        android:layout_width="wrap_content"
+        android:id="@+id/txtEmail"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="188dp"
         android:layout_marginRight="20dp"
         android:ems="10"
+        android:hint="For example: info@AEC.com"
+        android:inputType="textEmailAddress"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline7"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editPlace"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="244dp"
+        android:layout_marginRight="20dp"
+        android:ems="10"
+        android:hint="City .."
         android:inputType="textPersonName"
-        android:text="Name"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline7"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/txtGender"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="316dp"
+        android:layout_marginRight="20dp"
+        android:ems="10"
+        android:hint="Male or Female"
+        android:inputType="textPersonName"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline7"
         app:layout_constraintTop_toTopOf="parent" />

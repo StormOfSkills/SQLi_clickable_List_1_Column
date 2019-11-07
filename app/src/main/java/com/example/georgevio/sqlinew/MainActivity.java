@@ -6,7 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -14,16 +13,11 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-//George
-    DBHelper mydb;
-int s;
-    Button bttnshow1;
-    Button bttnshowall;
-    Button bttnadd;
 
-    EditText editTextName;
-    EditText editTextPhone;
-    EditText editTextEmail;
+    DBHelper mydb;
+
+    Button bttnshow1,  bttnshowall, bttnadd;
+    EditText editTextName, editTextPhone, editTextEmail, editTextPlace, editTextGender;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +28,9 @@ int s;
 
         editTextName = (EditText)findViewById(R.id.editName);
         editTextPhone = (EditText)findViewById(R.id.editPhone);
-        editTextEmail = (EditText)findViewById(R.id.editEmail);
+        editTextEmail = (EditText)findViewById(R.id.txtEmail);
+        editTextPlace = (EditText)findViewById(R.id.editPlace);
+        editTextGender = (EditText)findViewById(R.id.txtGender);
 
         bttnadd = (Button) findViewById(R.id.bttnAdd);
         bttnshow1 = (Button) findViewById(R.id.bttnShow1);
@@ -42,18 +38,18 @@ int s;
 
         bttnadd.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                //remove the following toast...
-                Toast.makeText(getApplicationContext(),
-                        "bttnOnClick Pressed", Toast.LENGTH_SHORT).show();
 
                 String getName = editTextName.getText().toString();
                 String getPhone = editTextPhone.getText().toString();
                 String getEmail = editTextEmail.getText().toString();
+                String getPlace = editTextPlace.getText().toString();
+                String getGender = editTextGender.getText().toString();
 
-                if (mydb.insertContact(getName, getPhone, getEmail)) {
+
+                if (mydb.insertContact(getName, getPhone, getEmail, getPlace, getGender)) {
                     Log.v("georgeLog", "Successfully inserted record to db");
                     Toast.makeText(getApplicationContext(),
-                            "Inserted:" + getName + ", " + getPhone + "," + getEmail, Toast.LENGTH_SHORT).show();
+                            "Inserted:" + getName + ", " + getPhone + "," + getEmail+ "," + getPlace+ "," + getGender, Toast.LENGTH_SHORT).show();
                 } else
                     Toast.makeText(getApplicationContext(), "DID NOT insert to db :-(", Toast.LENGTH_SHORT).show();
             }
@@ -69,8 +65,10 @@ int s;
                     String dName = getData.getString(getData.getColumnIndex("name"));
                     String dPhone = getData.getString(getData.getColumnIndex("phone"));
                     String dEmail = getData.getString(getData.getColumnIndex("email"));
+                    String dPlace = getData.getString(getData.getColumnIndex("place"));
+                    String dGender = getData.getString(getData.getColumnIndex("gender"));
                     Toast.makeText(getApplicationContext(),
-                            "rec: " + dName + ", " + dPhone + ", " + dEmail, Toast.LENGTH_LONG).show();
+                            "rec: " + dName + ", " + dPhone + ", " + dEmail + ", " + dPlace + ", " + dGender, Toast.LENGTH_LONG).show();
                 }
                 else
                     Toast.makeText(getApplicationContext(),
