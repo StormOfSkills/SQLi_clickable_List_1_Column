@@ -9,13 +9,13 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class adapter extends ArrayAdapter<User> {
+public class Adapter extends ArrayAdapter<User> {
 
     private LayoutInflater mInflater;
     private ArrayList<User> users;
     private int mViewResourceId;
 
-    public adapter(Context context, int textViewResourceId, ArrayList<User> users) {
+    public Adapter(Context context, int textViewResourceId, ArrayList<User> users) {
         super(context, textViewResourceId, users);
         this.users = users;
         mInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);

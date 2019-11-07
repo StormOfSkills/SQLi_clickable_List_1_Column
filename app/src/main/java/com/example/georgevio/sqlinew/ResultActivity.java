@@ -37,7 +37,7 @@ public class ResultActivity extends AppCompatActivity {
                 System.out.println(userList.get(i).getName());
                 i++;
             }
-            adapter adapter =  new adapter(this,R.layout.adapter_list, userList);
+            Adapter adapter =  new Adapter(this,R.layout.adapter_list, userList);
             listView = (ListView) findViewById(R.id.listView);
             listView.setAdapter(adapter);
         }
